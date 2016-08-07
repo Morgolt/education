@@ -1,6 +1,6 @@
 package com.morgolt.education.labyrinth;
 
-public class MazeGame {
+class MazeGame {
 
     Maze createMaze() {
         Maze maze = new Maze();
@@ -11,15 +11,15 @@ public class MazeGame {
         maze.addRoom(r1);
         maze.addRoom(r2);
 
-        r1.SetSide(Direction.North, new Wall());
-        r1.SetSide(Direction.East, theDoor);
-        r1.SetSide(Direction.South, new Wall());
-        r1.SetSide(Direction.West, new Wall());
+        r1.setSide(Direction.North, new Wall());
+        r1.setSide(Direction.East, theDoor);
+        r1.setSide(Direction.South, new Wall());
+        r1.setSide(Direction.West, new Wall());
 
-        r2.SetSide(Direction.North, new Wall());
-        r2.SetSide(Direction.East, new Wall());
-        r2.SetSide(Direction.South, new Wall());
-        r2.SetSide(Direction.West, theDoor);
+        r2.setSide(Direction.North, new Wall());
+        r2.setSide(Direction.East, new Wall());
+        r2.setSide(Direction.South, new Wall());
+        r2.setSide(Direction.West, theDoor);
 
         return maze;
     }

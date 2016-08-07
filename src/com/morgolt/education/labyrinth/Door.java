@@ -2,8 +2,8 @@ package com.morgolt.education.labyrinth;
 
 public class Door extends MapSite {
 
-    private Room room1;
-    private Room room2;
+    private final Room room1;
+    private final Room room2;
     private boolean isOpen;
 
     public Door(Room room1, Room room2) {
@@ -12,7 +12,7 @@ public class Door extends MapSite {
     }
 
     @Override
-    public void Enter() {
+    public void enter() {
 
     }
 

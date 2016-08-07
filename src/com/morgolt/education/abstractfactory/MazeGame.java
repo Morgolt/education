@@ -7,7 +7,7 @@ import com.morgolt.education.labyrinth.Room;
 
 // MazeGame with using of AbstractFactory pattern.
 
-public class MazeGame {
+class MazeGame {
 
     Maze createMaze(MazeFactory factory) {
         Maze maze = factory.makeMaze();
@@ -18,15 +18,15 @@ public class MazeGame {
         maze.addRoom(r1);
         maze.addRoom(r2);
 
-        r1.SetSide(Direction.North, factory.makeWall());
-        r1.SetSide(Direction.East, theDoor);
-        r1.SetSide(Direction.South, factory.makeWall());
-        r1.SetSide(Direction.West, factory.makeWall());
+        r1.setSide(Direction.North, factory.makeWall());
+        r1.setSide(Direction.East, theDoor);
+        r1.setSide(Direction.South, factory.makeWall());
+        r1.setSide(Direction.West, factory.makeWall());
 
-        r2.SetSide(Direction.North, factory.makeWall());
-        r2.SetSide(Direction.East, factory.makeWall());
-        r2.SetSide(Direction.South, factory.makeWall());
-        r2.SetSide(Direction.West, theDoor);
+        r2.setSide(Direction.North, factory.makeWall());
+        r2.setSide(Direction.East, factory.makeWall());
+        r2.setSide(Direction.South, factory.makeWall());
+        r2.setSide(Direction.West, theDoor);
 
         return maze;
     }

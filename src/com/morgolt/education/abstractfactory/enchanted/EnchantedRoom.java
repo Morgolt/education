@@ -4,7 +4,7 @@ import com.morgolt.education.labyrinth.Room;
 
 class EnchantedRoom extends Room {
 
-    private EnchantedMazeFactory.Spell openSpell;
+    private final EnchantedMazeFactory.Spell openSpell;
 
     EnchantedRoom(int roomNumber, EnchantedMazeFactory.Spell spell) {
         super(roomNumber);

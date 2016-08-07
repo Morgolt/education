@@ -13,7 +13,7 @@ class EnchantedMazeFactory extends MazeFactory {
 
     @Override
     public Door makeDoor(Room r1, Room r2) {
-        return new DoorNeedeingSpell(r1, r2);
+        return new DoorNeedingSpell(r1, r2);
     }
 
     private Spell castSpell() {

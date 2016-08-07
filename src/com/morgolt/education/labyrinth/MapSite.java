@@ -1,6 +1,7 @@
 package com.morgolt.education.labyrinth;
 
-public abstract class MapSite {
+@SuppressWarnings("EmptyMethod")
+abstract class MapSite {
 
-    public abstract void Enter();
+    public abstract void enter();
 }

@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Maze {
 
-    private List<Room> rooms = new ArrayList<>();
+    private final List<Room> rooms = new ArrayList<>();
 
-    Room findRoomByNumber(int number) {
+    public Room findRoomByNumber(int number) {
         return rooms.get(number);
     }
 
