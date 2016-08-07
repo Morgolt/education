@@ -5,13 +5,13 @@ import java.util.List;
 
 public class Maze {
 
-    List<Room> rooms = new ArrayList<>();
+    private List<Room> rooms = new ArrayList<>();
 
     Room findRoomByNumber(int number) {
         return rooms.get(number);
     }
 
-    void addRoom(Room room) {
+    public void addRoom(Room room) {
         rooms.add(room);
     }
 }

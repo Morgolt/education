@@ -9,11 +9,11 @@ public class Room extends MapSite {
         this.roomNumber = roomNumber;
     }
 
-    MapSite GetSide(Direction direction) {
+    public MapSite GetSide(Direction direction) {
         return this;
     }
 
-    void SetSide(Direction direction, MapSite side) {
+    public void SetSide(Direction direction, MapSite side) {
 
     }
 
