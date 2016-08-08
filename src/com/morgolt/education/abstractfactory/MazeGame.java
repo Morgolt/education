@@ -7,9 +7,9 @@ import com.morgolt.education.labyrinth.Room;
 
 // MazeGame with using of AbstractFactory pattern.
 
-class MazeGame {
+public class MazeGame {
 
-    Maze createMaze(MazeFactory factory) {
+    public Maze createMaze(MazeFactory factory) {
         Maze maze = factory.makeMaze();
         Room r1 = factory.makeRoom(1);
         Room r2 = factory.makeRoom(2);

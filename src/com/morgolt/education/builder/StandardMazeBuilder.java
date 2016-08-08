@@ -2,11 +2,11 @@ package com.morgolt.education.builder;
 
 import com.morgolt.education.labyrinth.*;
 
-class StandardMazeBuilder extends MazeBuilder {
+public class StandardMazeBuilder extends MazeBuilder {
 
     private Maze currentMaze;
 
-    StandardMazeBuilder() {
+    public StandardMazeBuilder() {
         currentMaze = null;
     }
 
@@ -22,14 +22,15 @@ class StandardMazeBuilder extends MazeBuilder {
 
     @Override
     void buildRoom(int number) {
-        if(null != currentMaze.findRoomByNumber(number)) {
+        if (null == currentMaze.findRoomByNumber(number)) {
             Room room = new Room(number);
-            currentMaze.addRoom(room);
 
             room.setSide(Direction.North, new Wall());
             room.setSide(Direction.East, new Wall());
             room.setSide(Direction.South, new Wall());
             room.setSide(Direction.West, new Wall());
+
+            currentMaze.addRoom(room);
         }
     }
 
@@ -46,6 +47,5 @@ class StandardMazeBuilder extends MazeBuilder {
     // determines direction of common wall between two rooms
     private Direction commonWall(Room r1, Room r2) {
         return Direction.North;
-
     }
 }

@@ -1,9 +1,11 @@
 package com.morgolt.education.labyrinth;
 
+import java.util.Arrays;
+
 @SuppressWarnings("EmptyMethod")
 public class Room extends MapSite {
 
-    private MapSite[] sides = new MapSite[4];
+    private MapSite[] sides = new MapSite[4]; //NESW
     private final int roomNumber;
 
     public Room(int roomNumber) {
@@ -15,11 +17,48 @@ public class Room extends MapSite {
     }
 
     public void setSide(Direction direction, MapSite side) {
+        switch(direction) {
+            case North:
+                sides[0] = side;
+            case East:
+                sides[1] = side;
+            case South:
+                sides[2] = side;
+            case West:
+                sides[3] = side;
+            default:
+                break;
+        }
 
     }
 
     @Override
     public void enter() {
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Room room = (Room) o;
+
+        if (roomNumber != room.roomNumber) return false;
+
+        //
+
+        return (room.getSide(Direction.North).getClass().equals(getSide(Direction.North).getClass()) &&
+                room.getSide(Direction.South).getClass().equals(getSide(Direction.South).getClass()) &&
+                room.getSide(Direction.West).getClass().equals(getSide(Direction.West).getClass()) &&
+                room.getSide(Direction.East).getClass().equals(getSide(Direction.East).getClass()));
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Arrays.hashCode(sides);
+        result = 31 * result + roomNumber;
+        return result;
     }
 }

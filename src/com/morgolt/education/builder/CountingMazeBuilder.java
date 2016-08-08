@@ -1,6 +1,6 @@
 package com.morgolt.education.builder;
 
-class CountingMazeBuilder extends MazeBuilder {
+public class CountingMazeBuilder extends MazeBuilder {
 
     private int doorsCount;
     private int roomsCount;
