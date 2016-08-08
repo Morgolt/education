@@ -3,7 +3,7 @@ package com.morgolt.education.labyrinth;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Maze {
+public class Maze implements Cloneable {
 
     private final List<Room> rooms = new ArrayList<>();
 
@@ -33,5 +33,14 @@ public class Maze {
     @Override
     public int hashCode() {
         return rooms != null ? rooms.hashCode() : 0;
+    }
+
+    @Override
+    public Maze clone() {
+        try {
+            return (Maze) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new InternalError();
+        }
     }
 }

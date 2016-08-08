@@ -9,7 +9,7 @@ import com.morgolt.education.labyrinth.Wall;
 
 public class MazeFactory {
 
-    Maze makeMaze() {
+    public Maze makeMaze() {
         return new Maze();
     }
 

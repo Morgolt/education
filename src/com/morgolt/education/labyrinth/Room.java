@@ -3,10 +3,10 @@ package com.morgolt.education.labyrinth;
 import java.util.Arrays;
 
 @SuppressWarnings("EmptyMethod")
-public class Room extends MapSite {
+public class Room extends MapSite implements Cloneable {
 
     private MapSite[] sides = new MapSite[4]; //NESW
-    private final int roomNumber;
+    private int roomNumber;
 
     public Room(int roomNumber) {
         this.roomNumber = roomNumber;
@@ -56,9 +56,22 @@ public class Room extends MapSite {
     }
 
     @Override
+    public Room clone() {
+        try {
+            return (Room) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new InternalError();
+        }
+    }
+
+    @Override
     public int hashCode() {
         int result = Arrays.hashCode(sides);
         result = 31 * result + roomNumber;
         return result;
+    }
+
+    public void initialize(int roomNumber) {
+        this.roomNumber = roomNumber;
     }
 }
