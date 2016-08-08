@@ -19,12 +19,12 @@ public class BombedMazeFactory extends MazeFactory {
 
     // Normally should be in another files. Make it inner for simplicity.
 
-    private class RoomWithABomb extends Room {
-        RoomWithABomb(int number) {
+    public static class RoomWithABomb extends Room {
+        public RoomWithABomb(int number) {
             super(number);
         }
     }
 
-    private class BombedWall extends Wall {
+    public static class BombedWall extends Wall {
     }
 }

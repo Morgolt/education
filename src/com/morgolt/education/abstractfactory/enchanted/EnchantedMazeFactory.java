@@ -4,7 +4,7 @@ import com.morgolt.education.abstractfactory.MazeFactory;
 import com.morgolt.education.labyrinth.Door;
 import com.morgolt.education.labyrinth.Room;
 
-class EnchantedMazeFactory extends MazeFactory {
+public class EnchantedMazeFactory extends MazeFactory {
 
     @Override
     public Room makeRoom(int number) {
@@ -16,10 +16,10 @@ class EnchantedMazeFactory extends MazeFactory {
         return new DoorNeedingSpell(r1, r2);
     }
 
-    private Spell castSpell() {
+    public Spell castSpell() {
         return new Spell();
     }
 
-    class Spell {
+    public static class Spell {
     }
 }

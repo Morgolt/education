@@ -2,11 +2,11 @@ package com.morgolt.education.abstractfactory.enchanted;
 
 import com.morgolt.education.labyrinth.Room;
 
-class EnchantedRoom extends Room {
+public class EnchantedRoom extends Room {
 
     private final EnchantedMazeFactory.Spell openSpell;
 
-    EnchantedRoom(int roomNumber, EnchantedMazeFactory.Spell spell) {
+    public EnchantedRoom(int roomNumber, EnchantedMazeFactory.Spell spell) {
         super(roomNumber);
         this.openSpell = spell;
     }

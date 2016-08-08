@@ -3,8 +3,6 @@ package test;
 import com.morgolt.education.abstractfactory.MazeFactory;
 import com.morgolt.education.builder.StandardMazeBuilder;
 import com.morgolt.education.labyrinth.*;
-import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
-import org.junit.Before;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -36,22 +34,28 @@ public class MazeGameTest {
     }
 
     @Test
-    public void createMazeUsingSet() throws Exception {
+    public void testCreateMazeUsingSet() throws Exception {
         Maze testMaze = new MazeGame().createMaze();
         assertEquals(expectedMaze, testMaze);
     }
 
     @Test
-    public void createMazeUsingFactory() throws Exception {
+    public void testCreateMazeUsingFactory() throws Exception {
         MazeFactory factory = new MazeFactory();
         Maze testMaze = new com.morgolt.education.abstractfactory.MazeGame().createMaze(factory);
         assertEquals(expectedMaze, testMaze);
     }
 
     @Test
-    public void createMazeUsingStandartBuilder() throws Exception {
+    public void testCreateMazeUsingStandartBuilder() throws Exception {
         StandardMazeBuilder builder = new StandardMazeBuilder();
         Maze testMaze = new com.morgolt.education.builder.MazeGame().createMaze(builder);
+        assertEquals(expectedMaze, testMaze);
+    }
+
+    @Test
+    public void testCreateMazeUsingFactoryMethods() throws Exception {
+        Maze testMaze = new com.morgolt.education.factorymethod.MazeGame().createMaze();
         assertEquals(expectedMaze, testMaze);
     }
 
