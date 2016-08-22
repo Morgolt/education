@@ -1,9 +1,9 @@
 package test;
 
-import com.morgolt.education.abstractfactory.MazeFactory;
-import com.morgolt.education.builder.StandardMazeBuilder;
-import com.morgolt.education.labyrinth.*;
-import com.morgolt.education.prototype.MazePrototypeFactory;
+import com.morgolt.education.patterns.creational.abstractfactory.MazeFactory;
+import com.morgolt.education.patterns.creational.builder.StandardMazeBuilder;
+import com.morgolt.education.patterns.creational.labyrinth.*;
+import com.morgolt.education.patterns.creational.prototype.MazePrototypeFactory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -43,20 +43,20 @@ public class MazeGameTest {
     @Test
     public void testCreateMazeUsingFactory() throws Exception {
         MazeFactory factory = new MazeFactory();
-        Maze testMaze = new com.morgolt.education.abstractfactory.MazeGame().createMaze(factory);
+        Maze testMaze = new com.morgolt.education.patterns.creational.abstractfactory.MazeGame().createMaze(factory);
         assertEquals(expectedMaze, testMaze);
     }
 
     @Test
     public void testCreateMazeUsingStandartBuilder() throws Exception {
         StandardMazeBuilder builder = new StandardMazeBuilder();
-        Maze testMaze = new com.morgolt.education.builder.MazeGame().createMaze(builder);
+        Maze testMaze = new com.morgolt.education.patterns.creational.builder.MazeGame().createMaze(builder);
         assertEquals(expectedMaze, testMaze);
     }
 
     @Test
     public void testCreateMazeUsingFactoryMethods() throws Exception {
-        Maze testMaze = new com.morgolt.education.factorymethod.MazeGame().createMaze();
+        Maze testMaze = new com.morgolt.education.patterns.creational.factorymethod.MazeGame().createMaze();
         assertEquals(expectedMaze, testMaze);
     }
 
@@ -69,7 +69,7 @@ public class MazeGameTest {
         MazePrototypeFactory prototypeFactory = new MazePrototypeFactory(new Maze(),
                 prototypeR1, new Wall(), prototypeDoor);
         // to create maze with another elements just initialize factory with new prototypes
-        Maze testMaze = new com.morgolt.education.abstractfactory.MazeGame().createMaze(prototypeFactory);
+        Maze testMaze = new com.morgolt.education.patterns.creational.abstractfactory.MazeGame().createMaze(prototypeFactory);
         assertEquals(expectedMaze, testMaze);
     }
 
