@@ -13,10 +13,8 @@ public class SortTest {
 
     @Test
     public void mergeSort() throws Exception {
-        sorter = (Comparable[] a) -> {
-            MergeSort merger = new MergeSort();
-            merger.sort(a);
-        };
+        // not necessary
+        sorter = MergeSort::sort;
         sorter.sort(testArray);
         assertArrayEquals(SORTED_ARRAY, testArray);
     }

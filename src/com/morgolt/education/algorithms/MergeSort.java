@@ -2,7 +2,7 @@ package com.morgolt.education.algorithms;
 
 public class MergeSort {
 
-    public void sort(Comparable[] array) {
+    public static void sort(Comparable[] array) {
         if (array.length <= 1)
             return;
 
@@ -19,7 +19,7 @@ public class MergeSort {
     }
 
     @SuppressWarnings("unchecked")
-    void merge(Comparable[] left, Comparable[] right, Comparable[] array) {
+    static void merge(Comparable[] left, Comparable[] right, Comparable[] array) {
         int first = 0;
         int second = 0;
         int merged = 0;
