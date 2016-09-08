@@ -1,7 +1,7 @@
 package test;
 
 import com.morgolt.education.datastructure.trees.BinaryTree;
-import com.morgolt.education.datastructure.trees.ITree;
+import com.morgolt.education.datastructure.trees.IBinaryTree;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,8 +14,9 @@ import static org.junit.Assert.*;
 
 public class BinaryTreeTest {
 
+
+    private IBinaryTree<Integer, String> tree = new BinaryTree<>();
     private final ByteArrayOutputStream outputString = new ByteArrayOutputStream();
-    private ITree<Integer, String> tree = new BinaryTree<>();
     private final String expectedString = "onetwothreefourfivesix";
 
     @Before
@@ -57,7 +58,7 @@ public class BinaryTreeTest {
     @Test
     public void traverse() throws Exception {
         Consumer<String> consumer = System.out::print;
-        tree.traverse(consumer);
+        tree.infixTraverse(consumer);
         assertEquals(expectedString, outputString.toString());
     }
 

@@ -2,13 +2,15 @@ package com.morgolt.education.datastructure.trees;
 
 import java.util.function.Consumer;
 
-public class BinaryTree<K extends Comparable, V> implements ITree<K, V> {
+public class BinaryTree<K extends Comparable, V> implements IBinaryTree<K, V> {
 
     private BinaryTreeNode root;
     private int count;
 
 
+    //region insert methods
     @Override
+    @SuppressWarnings("unchecked")
     public void insert(K key, V value) {
         if (root == null) {
             root = new BinaryTreeNode(key, value);
@@ -38,6 +40,7 @@ public class BinaryTree<K extends Comparable, V> implements ITree<K, V> {
             count--;
         }
     }
+    //endregion
 
     @Override
     @SuppressWarnings("unchecked")
@@ -119,16 +122,17 @@ public class BinaryTree<K extends Comparable, V> implements ITree<K, V> {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public V search(K key) {
-        return findNode(key).value;
+        return (V) findNode(key).value;
     }
 
     /**
-     * Infix traverse of the tree.
-     * @param consumer - function to imply to each node value
+     * Infix infixTraverse of the tree.
+     * @param consumer - function to apply to each node value
      */
     @Override
-    public void traverse(Consumer consumer) {
+    public void infixTraverse(Consumer consumer) {
         infixTraverse(consumer, root);
     }
 
@@ -140,6 +144,7 @@ public class BinaryTree<K extends Comparable, V> implements ITree<K, V> {
             infixTraverse(consumer, root.right);
         }
     }
+    //endregion
 
     @Override
     public boolean contains(K key) {
@@ -166,7 +171,7 @@ public class BinaryTree<K extends Comparable, V> implements ITree<K, V> {
         return current;
     }
 
-    private class BinaryTreeNode {
+    private static class BinaryTreeNode<K extends Comparable, V> {
         private final K key;
         private V value;
         private BinaryTreeNode left;

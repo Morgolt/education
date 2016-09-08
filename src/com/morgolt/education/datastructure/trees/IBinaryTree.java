@@ -2,7 +2,7 @@ package com.morgolt.education.datastructure.trees;
 
 import java.util.function.Consumer;
 
-public interface ITree<K, V> {
+public interface IBinaryTree<K, V> {
 
     void insert(K key, V value);
 
@@ -10,7 +10,7 @@ public interface ITree<K, V> {
 
     V search(K key);
 
-    void traverse(Consumer consumer);
+    void infixTraverse(Consumer consumer);
 
     boolean contains(K key);
 
